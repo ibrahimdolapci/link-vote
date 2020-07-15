@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { LocalStorageService } from './lib/services';
-import { selectAllLinks, LinkActions } from './lib/store/link';
+import { selectAllLinks, LinkActions } from './lib/store';
 
 @Component({
   selector: 'app-root',

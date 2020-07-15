@@ -15,7 +15,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { linkReducer } from './lib/store/link';
+import { linkReducer } from './lib/store';
 
 @NgModule({
   declarations: [

@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { RemoveLinkComponent } from '../../components';
 import { Store } from '@ngrx/store';
-import { selectAllLinks, LinkActions } from '../../store/link';
+import { selectAllLinks, LinkActions } from '../../store';
 import { ILink } from '../../interfaces';
 
 @Component({

@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 import { Store } from '@ngrx/store';
-import { LinkActions } from '../../store/link';
+import { LinkActions } from '../../store';
 
 @Component({
   selector: 'app-add-link',

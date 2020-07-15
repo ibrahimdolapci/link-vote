@@ -3,9 +3,9 @@ import { EntityAdapter, createEntityAdapter, EntityState } from '@ngrx/entity';
 import { LinkActions } from './link.action';
 import { ILink } from '../../interfaces';
 
-const sortByModifiedDate = (a: ILink, b: ILink) => b.id - a.id;
+const sortById = (a: ILink, b: ILink) => b.id - a.id;
 
-const adapter: EntityAdapter<ILink> = createEntityAdapter<ILink>({ sortComparer: sortByModifiedDate });
+const adapter: EntityAdapter<ILink> = createEntityAdapter<ILink>({ sortComparer: sortById });
 
 type LinkState = EntityState<ILink>;
 

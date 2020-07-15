@@ -3,7 +3,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 import { ToastrService } from 'ngx-toastr';
 import { ILink } from '../../interfaces';
 import { Store } from '@ngrx/store';
-import { LinkActions } from '../../store/link';
+import { LinkActions } from '../../store';
 
 @Component({
   selector: 'app-remove-link',
