@@ -1,0 +1,47 @@
+@import "variables/theme";
+@import "variables/colors";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 $space-2xl;
+}
+
+nav {
+  width: 100%;
+  height: 40px;
+  padding: $space-2xs 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $color-1;
+
+  .logo {
+    width: 250px;
+    height: 100%;
+    background-image: url(/assets/images/logo.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 150px;
+  }
+
+  .link-vote {
+    font-size: 1.25rem;
+
+    b {
+      font-weight: 900;
+    }
+  }
+
+  .challange {
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin-left: $space-2xs;
+  }
+}
+
+.content{
+    width: 40%;
+    min-width: 250px;
+}

@@ -1,0 +1,49 @@
+<div class="submit">
+    <button class="btn" routerLink="/add"><i class="icon icon-plus"></i></button>
+    <span>Submit a Link</span>
+</div>
+<div class="links" *ngIf="totalItems?.length">
+    <div class="btn-group" dropdown>
+        <button id="order-by" dropdownToggle type="button" class="dropdown-toggle btn" aria-controls="dropdown">
+            <span class="text">Order by</span>
+            <div><span class="caret"></span></div>
+        </button>
+        <ul id="dropdown" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="order-by">
+            <li role="menuitem"><a class="dropdown-item" routerLink="/list" [queryParams]="{orderBy:'desc'}">Most Voted
+                    (Z -> A)</a></li>
+            <li role="menuitem"><a class="dropdown-item" routerLink="/list" [queryParams]="{orderBy:'asc'}">Less Voted
+                    (A -> Z)</a></li>
+        </ul>
+    </div>
+    <div class="list">
+        <div class="link" *ngFor="let link of links">
+            <button class="btn remove-button" (click)="remove(link)"><i class="icon icon-cancel-circle"></i></button>
+            <div class="vote-container">
+                <span class="vote">{{link.vote}}</span>
+                <span
+                    class="text">{{link.vote | i18nPlural:{'=0' : 'Points','=1' : 'Point','other' : 'Points'} }}</span>
+            </div>
+            <div class="info">
+                <span class="name">{{link.name}}</span>
+                <span class="url">({{link.url}})</span>
+                <div class="actions">
+                    <button class="btn" (click)="upVote(link.id)"><i class="icon icon-arrow-up"></i>Up Vote</button>
+                    <button class="btn" (click)="downVote(link.id)" [disabled]="!link.vote"><i
+                            class="icon icon-arrow-down"></i>Down
+                        Vote</button>
+                </div>
+            </div>
+        </div>
+        <pagination *ngIf="totalItems.length >= limit" [itemsPerPage]="limit" [customPreviousTemplate]="prevTemplate"
+            [customNextTemplate]="nextTemplate" [maxSize]="5" [totalItems]="totalItems.length" [(ngModel)]="currentPage"
+            (ngModelChange)="pageChanged($event)"></pagination>
+
+        <ng-template #nextTemplate>
+            <i class="icon icon-arrow-right"></i>
+        </ng-template>
+
+        <ng-template #prevTemplate>
+            <i class="icon icon-arrow-left"></i>
+        </ng-template>
+    </div>
+</div>

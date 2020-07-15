@@ -1,0 +1,195 @@
+@import "variables/theme";
+@import "variables/colors";
+
+app-links {
+  .submit {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 900;
+    padding: $space-3xs;
+    background-color: $color-5;
+    margin: $space $space-2xs;
+    border-radius: $border-radius;
+
+    button {
+      width: 70px;
+      height: 70px;
+      border-radius: $border-radius;
+      border: 1px solid $color-3;
+      font-size: 1.5rem;
+
+      .icon {
+        vertical-align: middle;
+      }
+    }
+
+    span {
+      margin: auto;
+    }
+  }
+
+  .links {
+    padding: $space-3xs;
+    border-top: 1px solid $color-5;
+
+    .btn-group {
+      margin-left: $space-3xs;
+
+      button {
+        width: 150px;
+        font-size: 0.75rem;
+        border: 1px solid $color-4;
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding: $space-3xs $space-2xs;
+
+        div {
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          width: 20px;
+          border-left: 1px solid $color-4;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &::after {
+          position: absolute;
+          right: 5px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+
+      .dropdown-item {
+        line-height: 1.5rem;
+      }
+    }
+
+    .list {
+      margin-top: $space;
+
+      .link {
+        display: flex;
+        padding: $space-3xs;
+        cursor: pointer;
+        position: relative;
+
+        &:not(:first-child) {
+          margin-top: $space-md;
+        }
+
+        &:hover {
+          background-color: $color-5;
+
+          .remove-button {
+            display: block;
+          }
+        }
+
+        .remove-button {
+          position: absolute;
+          display: none;
+          right: -8px;
+          top: -8px;
+          padding: 0;
+          background-color: transparent;
+          font-size: 1rem;
+        }
+
+        .vote-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: $color-5;
+          border: 1px solid $color-4;
+          min-width: 70px;
+          width: 70px;
+          height: 70px;
+          border-radius: $border-radius;
+
+          .vote {
+            font-size: 1.25rem;
+            font-weight: 900;
+          }
+
+          .text {
+            text-transform: uppercase;
+            margin-top: $space-3xs;
+            font-size: 0.75rem;
+          }
+        }
+
+        .info {
+          display: flex;
+          flex-direction: column;
+          margin-left: $space-2xs;
+          width: 100%;
+
+          .name {
+            font-size: 1.125rem;
+            font-weight: 700;
+          }
+
+          .url {
+            font-size: 0.75rem;
+            color: $font-color-2;
+            margin-top: $space-3xs;
+          }
+
+          .actions {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+
+            button {
+              background-color: transparent;
+              font-size: 0.75rem;
+              font-weight: 700;
+              color: $font-color-2;
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
+
+    pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+
+      .pagination {
+        align-items: center;
+
+        .page-item {
+          margin: 0 $space-3xs;
+
+          &.active .page-link {
+            background-color: transparent;
+            border: 1px solid $color-3;
+          }
+
+          &.disabled .page-link {
+            color: $font-color-2;
+          }
+
+          .page-link {
+            border: none;
+            background-color: transparent;
+            color: $font-color-1;
+            font-weight: bold;
+            line-height: 1;
+            padding: $space-3xs;
+          }
+        }
+      }
+    }
+  }
+}

@@ -28,9 +28,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/app/lib/scss"
+              ]
+            }
           },
           "configurations": {
             "production": {
@@ -123,6 +129,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "link-vote"
+    }
+  },
+  "defaultProject": "link-vote",
+  "cli": {
+    "analytics": "378f362b-6ce0-4ea5-a499-50ce57271cdb"
+  }
 }

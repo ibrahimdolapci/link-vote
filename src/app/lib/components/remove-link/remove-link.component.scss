@@ -1,0 +1,34 @@
+@import "variables/theme";
+@import "variables/colors";
+
+.modal-header {
+  padding: $space-3xs $space-2xs;
+  background-color: $color-1;
+  color: $font-color-3;
+
+  button {
+    color: $font-color-3;
+  }
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    color: $font-color-2;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+}
+
+.modal-footer{
+    border-top: none;
+    justify-content: space-evenly;
+}

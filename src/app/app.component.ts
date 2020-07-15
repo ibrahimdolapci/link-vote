@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { LocalStorageService } from './lib/services';
+import { selectAllLinks, LinkActions } from './lib/store/link';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'link-vote';
+  constructor(
+    private store: Store,
+    private localStorageService: LocalStorageService
+  ) {
+  }
+
+  ngOnInit() {
+    const links = this.localStorageService.get("links");
+    this.store.dispatch(LinkActions.load({ links }));
+
+    this.store.select(selectAllLinks).subscribe(links => this.localStorageService.set("links", links));
+  }
 }
