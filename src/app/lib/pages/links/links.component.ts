@@ -37,8 +37,13 @@ export class LinksComponent implements OnInit {
 
         if (orderBy) {
           const direction = orderBy == 'asc' ? -1 : 1;
-          links = links.sort((a, b) => direction * (b.modifiedDate - a.modifiedDate));
-          links = links.sort((a, b) => direction * (b.vote - a.vote));
+          links = links.sort((a, b) => {
+            if (b.vote == a.vote) {
+              return b.modifiedDate - a.modifiedDate;
+            }
+
+            return direction * (b.vote - a.vote)
+          });
         }
 
         const start = (page - 1) * this.limit;
