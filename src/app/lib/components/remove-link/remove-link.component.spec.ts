@@ -45,8 +45,7 @@ describe('RemoveLinkComponent', () => {
 
     expect(toastr.currentlyActive).toBe(1);
   });
-
-
+  
   function clickByCSS(selector: string) {
     const debugElement = fixture.debugElement.query(By.css(selector));
     const el: HTMLElement = debugElement.nativeElement;

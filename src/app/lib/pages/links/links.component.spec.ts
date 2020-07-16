@@ -117,13 +117,13 @@ describe('LinksComponent', () => {
     const links = component.links;
     let isSortedByVoteDesc = true;
 
-
     for (let i = 0; i < links.length - 2; i++) {
       if (links[i].vote < links[i + 1].vote) {
         isSortedByVoteDesc = false;
         break;
       }
     }
+
     expect(isSortedByVoteDesc).toBeTrue();
   }));
 
@@ -160,7 +160,6 @@ describe('LinksComponent', () => {
     let linkElement = findElementByCss('app-link:first-child');
     linkElement.dispatchEvent(new MouseEvent('mouseover'));
     fixture.detectChanges();
-
 
     const isHighlighted = linkElement.classList.contains('highlighted');
     const removeButton = findElementByCss('app-link:first-child .remove-button');
