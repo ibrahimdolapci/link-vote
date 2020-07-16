@@ -19,7 +19,7 @@ export const linkReducer = createReducer<LinkState>(
         const link = state.entities[id];
         return adapter.updateOne({ id, changes: { vote: link.vote - 1, modifiedDate: Date.now() } }, state);
     }),
-    on(LinkActions.add, (state, action) => adapter.addOne({ ...action, id: state.ids.length, vote: 0, modifiedDate: Date.now() }, state)),
+    on(LinkActions.add, (state, { type, ...link }) => adapter.addOne({ ...link, id: state.ids.length, vote: 0, modifiedDate: Date.now() }, state)),
     on(LinkActions.remove, (state, { id }) => adapter.removeOne(id, state)),
     on(LinkActions.load, (state, { links }) => adapter.setAll(links, state))
 );

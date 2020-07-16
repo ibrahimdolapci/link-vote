@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LinksComponent, AddLinkComponent } from './lib/pages';
 
 
-const routes: Routes = [{
+export const routes: Routes = [{
   path: '',
   pathMatch: 'full',
   redirectTo: 'list'

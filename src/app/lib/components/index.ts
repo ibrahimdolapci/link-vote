@@ -1,1 +1,2 @@
-export * from './remove-link/remove-link.component';
+export * from './link';
+export * from './remove-link';

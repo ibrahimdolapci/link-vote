@@ -19,13 +19,15 @@ export class AddLinkComponent implements OnInit {
     private location: Location,
     private toastr: ToastrService,
     private store: Store
-  ) { }
-
-  ngOnInit(): void {
+  ) {
     this.formGroup = this.fb.group({
       name: ['', Validators.required],
       url: ['', Validators.required]
     });
+  }
+
+  ngOnInit(): void {
+
   }
 
   add() {

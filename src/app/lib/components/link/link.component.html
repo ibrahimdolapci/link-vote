@@ -1,0 +1,14 @@
+<button class="btn remove-button" (click)="remove(link)"><i class="icon icon-cancel-circle"></i></button>
+<div class="vote-container">
+    <span class="vote">{{link.vote}}</span>
+    <span class="text">{{link.vote | i18nPlural:{'=0' : 'Points','=1' : 'Point','other' : 'Points'} }}</span>
+</div>
+<div class="info">
+    <span class="name">{{link.name}}</span>
+    <span class="url">({{link.url}})</span>
+    <div class="actions">
+        <button class="btn" (click)="upVote(link.id)"><i class="icon icon-arrow-up"></i>Up Vote</button>
+        <button class="btn" (click)="downVote(link.id)" [disabled]="!link.vote"><i class="icon icon-arrow-down"></i>Down
+            Vote</button>
+    </div>
+</div>

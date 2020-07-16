@@ -16,6 +16,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { linkReducer } from './lib/store';
+import { LinkComponent } from './lib/components/link/link.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { linkReducer } from './lib/store';
     LayoutComponent,
     LinksComponent,
     AddLinkComponent,
-    RemoveLinkComponent
+    RemoveLinkComponent,
+    LinkComponent
   ],
   imports: [
     BrowserModule,

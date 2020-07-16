@@ -2,10 +2,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Subject, combineLatest } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BsModalService } from 'ngx-bootstrap/modal';
-import { RemoveLinkComponent } from '../../components';
 import { Store } from '@ngrx/store';
-import { selectAllLinks, LinkActions } from '../../store';
+import { selectAllLinks } from '../../store';
 import { ILink } from '../../interfaces';
 
 @Component({
@@ -24,7 +22,6 @@ export class LinksComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private bsModal: BsModalService,
     private router: Router,
     private store: Store
   ) { }
@@ -54,16 +51,8 @@ export class LinksComponent implements OnInit {
       });
   }
 
-  upVote(id: number) {
-    this.store.dispatch(LinkActions.upVote({ id }))
-  }
-
-  downVote(id: number) {
-    this.store.dispatch(LinkActions.downVote({ id }))
-  }
-
-  remove(link: ILink) {
-    this.bsModal.show(RemoveLinkComponent, { initialState: { link }, class: 'modal-sm' });
+  orderBy(direction: string) {
+    this.router.navigate([], { relativeTo: this.route, queryParams: { orderBy: direction }, queryParamsHandling: 'merge' })
   }
 
   pageChanged(page) {
