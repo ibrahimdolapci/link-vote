@@ -12,8 +12,7 @@ export class AppComponent {
   constructor(
     private store: Store,
     private localStorageService: LocalStorageService
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
     const links = this.localStorageService.get("links");
